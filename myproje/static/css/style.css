@@ -1,0 +1,63 @@
+a{
+  text-decoration:none;
+}
+.navbar-togeller{
+  border:0px;
+  focused: none;
+  opacity: ;
+  color:black;
+
+}
+@media (min-width: 992px) {
+    .navbar-togeller {
+      display: none;
+
+    }
+  }
+
+span{
+box-shadow: none;
+  }
+.navbar-toggler-icon{
+  focused: none;
+  bacground-color:none !important;
+  color:black;
+   
+}
+
+.usercover{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position: relative;
+  width:100vh;
+  height:100vh;
+  margin: auto ;
+
+}
+.demo{
+  overflow: hidden;
+  position: relative;
+  background-color:rgba(135,135,135,0.3);
+}
+.backImage{
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vh;
+  height: 100vh;
+
+}
+
+
+form{
+  
+  min-width:400px;
+  min-height:400px;
+}
+.blogs{
+  display:flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
+}

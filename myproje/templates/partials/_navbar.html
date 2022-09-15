@@ -1,0 +1,47 @@
+{% load static %}
+<nav class="navbar navbar-dark bg-secondary navbar-expand-lg">
+  <div class="container">
+    <a href="{% url 'home' %}" class="navbar-brand">Blogapp</a>
+
+    <button
+      type="button"
+      class="navbar-togeller"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar"
+    >
+    
+       <span class="navbar-toggler-icon" ></span>
+    </button> 
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav me-auto"> 
+        <li class="nav-item">
+          <a href="{% url 'home' %}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a href="" class="nav-link">Welcome ,{{ user.username |title}}</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+        </li>
+
+        {% else %}
+
+        <li class="nav-item">
+          <a href="{% url 'login' %}" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{% url 'register' %}" class="nav-link">Register</a>
+        </li>
+
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

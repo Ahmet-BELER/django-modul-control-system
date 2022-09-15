@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title%}
+Blogs
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-3">
+
+        {% include 'partials/_categories.html' %}
+       
+      </div>
+      <div class="col-9"> 
+
+     
+        {% if blogs|length > 0 %}
+
+        {% for blog in blogs %}
+        {% comment %} <h1 style="text-align: center; color: blue; ">{{ blog.category|title}} Courses</h1> {% endcomment %}
+
+        {% include 'blog/partials/_blog.html'%}
+
+        {%endfor %}
+        {% else %}
+        <div class="alert alert-warning"> NO COURSES</div>
+          
+        {% endif %}
+          
+ 
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock  %}

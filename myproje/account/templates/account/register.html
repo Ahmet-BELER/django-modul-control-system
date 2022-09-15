@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %} {% endblock css_files %}
+<link rel="stylesheet" href="{ % static 'account/account.css' %}">
+{% endblock %} {% endcomment %}
+
+{% block title%}
+Register page
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <h1>Register page</h1>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    
+    {% if error %}
+      <div class="alert alert-danger">{{error}}</div>
+    {% endif %}
+      
+  
+    <div class="mb-3">
+  
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username">
+  
+    </div>
+    <div class="mb-3">
+  
+      <label for="firstname" class="form-label">Firstname</label>
+      <input type="text" class="form-control" name="firstname">
+  
+    </div>
+    <div class="mb-3">
+  
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control" name="lastname" value="{{ lastname }}">
+  
+    </div>
+
+    <div class="mb-3">
+  
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email">
+  
+    </div>
+  
+  
+    <div class="mb-3">
+  
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+  
+    </div>
+    <div class="mb-3">
+  
+      <label for="passwordrepeat" class="form-label">Password Repeat</label>
+      <input type="password" class="form-control" name="passwordrepeat">
+  
+    </div>
+  
+    <input type="submit" value="Register" class="btn btn-primary"> 
+  
+  
+  </form>
+  </div>
+ 
+  {% endblock  %} 
+
+{% block js_file %}
+
+<script src="{ % static 'account/js/detail.js' %}"></script>
+
+  {% endblock  %} 
+     
+    
