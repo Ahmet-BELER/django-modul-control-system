@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {%block css_files %}
-<!-- <link rel="stylesheet" href="{ % static ' css/login.css' %}"> -->
+ <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
 {%endblock %}
 
 {% block title%}
 Login page
 {% endblock %}
-
+ 
 {% block content %}
 <div class="demo">
-{% comment %}   <img className="backImage" src="{% static 'img/react.png' %} "alt="backImage"/> {% endcomment %}
-<div class="container usercover mt-3 ">
-  <div className="row">
-    <div className="col-md-4">
-      <div className="col-md-7">
+ <img class="backImage" src="{% static 'img/login.jpg' %} "alt="backImage"/> 
+<div class="container usercover ">
 
-<form action="" method="POST">
+  
+ 
+
+<form action="" method="POST" className="form-login">
   {% csrf_token %}
   
   {% if error %}
@@ -38,17 +38,15 @@ Login page
 
   </div>
 
-  <input type="submit" value="Login" class="btn btn-primary"> 
+  <input type="submit" value="Login" class="btn btn-primary" style="width:350px"> 
 
 
 </form>
 
-<div className="col-md-7">
-  
-</div>
-</div>
-</div>
-  </div>
+
+
+
+
 </div>
   {% endblock  %} 
 {% block js_file %}

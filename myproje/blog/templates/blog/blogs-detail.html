@@ -4,7 +4,7 @@
  
 
 {% block content %}
-<div class="container">
+<div class="main">
     <div class="row" >
 
  
@@ -17,8 +17,8 @@
             <div class="col-9">
               <div class="card-body" >
                 <h3 class="card-title mb-3 " >
-                  <a href="{% url 'blog_details' blog.slug %}" style="color:black;">
-                {{ blog.title | title}}
+                  <a href="{% url 'blog_details' users.slug %}" style="color:black;">
+                {{ users.name | title}}
               </a>
           </h3>  
           <img
@@ -29,7 +29,7 @@
         /> 
       
           <p class="card-text">
-            {{ blog.description | safe }}
+            {{ users.description | safe }}
           </p>
               </div>
             </div>

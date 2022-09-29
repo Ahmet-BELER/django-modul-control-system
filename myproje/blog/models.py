@@ -12,6 +12,9 @@ class Category (models.Model):
      def __str__(self):
             
         return f"{self.name}" 
+     class Meta:
+         db_table="categorys"
+        
                
      def  save(self, *args, **kwargs):
         self.slug=slugify(self.name)
@@ -20,23 +23,25 @@ class Category (models.Model):
    
 
 
-class Blog (models.Model):
-    title = models.CharField(max_length=200)
-    #image = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="blogs")
+class User (models.Model):
+    name = models.CharField(max_length=200)
+    surname = models.CharField(max_length=20)
+    email = models.EmailField(max_length=50)
     description = RichTextField()
-    is_active = models.BooleanField(default=False)
-    is_home = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_home = models.BooleanField(default=True)
     slug = models.SlugField(null=True, blank=True, unique=True, db_index=True)
     #category= models.ForeignKey(Category ,null=True, default=5 ,on_delete= models.CASCADE)
-    category= models.ManyToManyField(Category, blank=True)
+    category= models.ManyToManyField(Category, blank=False)
     
     def __str__(self): 
         
-        return f"{self.title}" 
+        return f"{self.name}" 
+    class Meta:
+         db_table="users"
     
     def  save(self, *args, **kwargs):
-        self.slug=slugify(self.title)
+        self.slug=slugify(self.email)
         super().save(*args, **kwargs)
         
     

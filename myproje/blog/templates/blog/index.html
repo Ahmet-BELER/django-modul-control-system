@@ -11,7 +11,7 @@ homepage
 {% block content %}
 
 
-<div class="container">
+<div class="main">
     <div class="row">
       <div class="col-3">
 
@@ -21,17 +21,28 @@ homepage
     
       <div class="col-9 "> 
        
-       
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Company</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
 
-        {% for blog in blogs %}
-          {%  if blog.is_home %}
+        {% for user in users %}
+          {%  if user.is_home %}
 
              {% include 'blog/partials/_blog.html'%}
 
            {% endif %}
         {%endfor %}
       
-     
+      </table>
       </div>
     </div>
   </div>

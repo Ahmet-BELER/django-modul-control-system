@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{%load static%}
+
+
+{% block css_files%}
+
+<link rel="stylesheet" href="{% static 'css/add_user.css' %}" />
+
+
+{% endblock %}
+{% block content %}
+<div class="main ">
+  <div class="row">
+    <div class="col-3">
+
+      {% include 'partials/_categories.html' %}
+
+    </div>
+    <div class="col-9 ">
+
+      <form action="updaterecord_user/{{ user.slug }}" method="post">
+        {% csrf_token %}
+        <div class="user">
+          <div>
+            <div>
+              <label for="name">Name </label>
+            </div>
+            <input type="text" name="name" value="{{user.name}}" />
+          </div>
+          <div>
+            <div>
+              <label for="surname">Surname</label>
+            </div>
+            <input type="text" name="surname" value="{{user.surname}}" />
+          </div>
+          <div>
+            <div>
+              <label for="email">email </label>
+            </div>
+            <input type="email" name="email" value="{{user.email}}" />
+          </div>
+          <div>
+            <div>
+              <label for="description">description</label>
+            </div>
+            <input type="text" name="description" value="{{user.description}}" />
+          </div>
+          <div>
+            <h5>select category</h5>
+            {% for categor in category %}
+            <div>
+              <input type="checkbox" value="{{categor.id}}" name="category">{{categor.name}}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <input type="submit" value="Save" class="btn btn-primary mt-3" style="width:100px" />
+      </form>
+      {% if msg %}
+      <h2>{{msg|upper}}</h2>
+
+      {% endif %}
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

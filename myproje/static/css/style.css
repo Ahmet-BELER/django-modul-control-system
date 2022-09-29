@@ -1,6 +1,9 @@
 a{
   text-decoration:none;
 }
+.navbar{
+  background-color:rgba(133,149,163);
+}
 .navbar-togeller{
   border:0px;
   focused: none;
@@ -25,23 +28,10 @@ box-shadow: none;
    
 }
 
-.usercover{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position: relative;
-  width:100vh;
-  height:100vh;
-  margin: auto ;
 
-}
-.demo{
-  overflow: hidden;
-  position: relative;
-  background-color:rgba(135,135,135,0.3);
-}
+
 .backImage{
-  opacity: 0.5;
+  opacity: 0.7;
   position: absolute;
   left: 0;
   top: 0;
@@ -51,13 +41,49 @@ box-shadow: none;
 }
 
 
-form{
-  
-  min-width:400px;
-  min-height:400px;
-}
+
 .blogs{
   display:flex;
   flex-wrap: wrap;
-  border: 1px solid red;
+
+}
+.register{
+  background-color:rgba(135,135,135,0.3);
+  border-radius:20px;
+  max-width:600px;
+
+
+}
+
+
+body{
+background-color:rgba(135,135,135,0.1)
+}
+.category{
+  display:flex
+  justify-content:center
+  align-items:center
+  background-color:rgba(135,135,135,0.3);
+}
+
+.col-3{
+  background-color:rgba(55,58,64);
+  height:100vh;
+}
+.col-9{
+  background-color:rgba(50,58,64,0.1);
+  height:100vh;
+}
+body{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+
+}
+.container{
+  width:100%;
+
+}
+.main{
+  width:100% !important;
 }

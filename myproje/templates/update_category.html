@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{%load static%}
+
+
+{% block css_files%}
+
+<link rel="stylesheet" href="{% static 'css/add_category.css' %}" />
+
+
+{% endblock %}
+{% block title%}
+Blogs
+{% endblock %}
+{% block content %}
+<div class="main">
+    <div class="row">
+        <div class="col-3">
+
+            {% include 'partials/_categories.html' %}
+
+        </div>
+        <div class="col-9 category">
+
+
+            <form action="updaterecord/{{ category.id }}" method="post" class="formCategory">
+                {% csrf_token %}
+                <label for="name">Name id: {{ category.id }}</label>
+                
+                
+                    
+             
+                    
+                <input type="text" name="name" value="{{ category.name }}"></input>
+
+                <input type="submit" value="update" class="btn btn-primary mt-3">
+            
+            </form>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+</body>

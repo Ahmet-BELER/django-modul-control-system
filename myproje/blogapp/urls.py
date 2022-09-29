@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('account/', include('account.urls')),
     
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDİA_ROOT)
