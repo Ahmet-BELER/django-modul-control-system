@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib.auth.models import User
 
-
+#
 def login_request(request) :
     if   request.user.is_authenticated:
         return redirect("home")
